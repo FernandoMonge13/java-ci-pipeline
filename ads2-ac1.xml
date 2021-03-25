@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="ads2-ac1" default="all">
+  
+  
+  <property file="ads2-ac1.properties"/>
+  <!-- Uncomment the following property if no tests compilation is needed -->
+  <!-- 
+  <property name="skip.tests" value="true"/>
+   -->
+  
+  <!-- Compiler options -->
+  
+  <property name="compiler.debug" value="on"/>
+  <property name="compiler.generate.no.warnings" value="off"/>
+  <property name="compiler.args" value=""/>
+  <property name="compiler.max.memory" value="700m"/>
+  <patternset id="ignored.files">
+    <exclude name="**/*.pyc/**"/>
+    <exclude name="**/*.pyo/**"/>
+    <exclude name="**/*.rbc/**"/>
+    <exclude name="**/*.yarb/**"/>
+    <exclude name="**/*~/**"/>
+    <exclude name="**/.DS_Store/**"/>
+    <exclude name="**/.git/**"/>
+    <exclude name="**/.hg/**"/>
+    <exclude name="**/.svn/**"/>
+    <exclude name="**/CVS/**"/>
+    <exclude name="**/__pycache__/**"/>
+    <exclude name="**/_svn/**"/>
+    <exclude name="**/vssver.scc/**"/>
+    <exclude name="**/vssver2.scc/**"/>
+  </patternset>
+  <patternset id="library.patterns">
+    <include name="*.egg"/>
+    <include name="*.zip"/>
+    <include name="*.war"/>
+    <include name="*.swc"/>
+    <include name="*.ear"/>
+    <include name="*.jar"/>
+    <include name="*.klib"/>
+    <include name="*.ane"/>
+  </patternset>
+  <patternset id="compiler.resources">
+    <exclude name="**/?*.java"/>
+    <exclude name="**/?*.form"/>
+    <exclude name="**/?*.class"/>
+    <exclude name="**/?*.groovy"/>
+    <exclude name="**/?*.scala"/>
+    <exclude name="**/?*.flex"/>
+    <exclude name="**/?*.kt"/>
+    <exclude name="**/?*.clj"/>
+    <exclude name="**/?*.aj"/>
+  </patternset>
+  
+  <!-- JDK definitions -->
+  
+  <property name="jdk.bin.15" value="${jdk.home.15}/bin"/>
+  <path id="jdk.classpath.15">
+    <fileset dir="${jdk.home.15}">
+      <include name="../jdk-15!/java.base"/>
+      <include name="../jdk-15!/java.compiler"/>
+      <include name="../jdk-15!/java.datatransfer"/>
+      <include name="../jdk-15!/java.desktop"/>
+      <include name="../jdk-15!/java.instrument"/>
+      <include name="../jdk-15!/java.logging"/>
+      <include name="../jdk-15!/java.management"/>
+      <include name="../jdk-15!/java.management.rmi"/>
+      <include name="../jdk-15!/java.naming"/>
+      <include name="../jdk-15!/java.net.http"/>
+      <include name="../jdk-15!/java.prefs"/>
+      <include name="../jdk-15!/java.rmi"/>
+      <include name="../jdk-15!/java.scripting"/>
+      <include name="../jdk-15!/java.se"/>
+      <include name="../jdk-15!/java.security.jgss"/>
+      <include name="../jdk-15!/java.security.sasl"/>
+      <include name="../jdk-15!/java.smartcardio"/>
+      <include name="../jdk-15!/java.sql"/>
+      <include name="../jdk-15!/java.sql.rowset"/>
+      <include name="../jdk-15!/java.transaction.xa"/>
+      <include name="../jdk-15!/java.xml"/>
+      <include name="../jdk-15!/java.xml.crypto"/>
+      <include name="../jdk-15!/jdk.accessibility"/>
+      <include name="../jdk-15!/jdk.aot"/>
+      <include name="../jdk-15!/jdk.attach"/>
+      <include name="../jdk-15!/jdk.charsets"/>
+      <include name="../jdk-15!/jdk.compiler"/>
+      <include name="../jdk-15!/jdk.crypto.cryptoki"/>
+      <include name="../jdk-15!/jdk.crypto.ec"/>
+      <include name="../jdk-15!/jdk.crypto.mscapi"/>
+      <include name="../jdk-15!/jdk.dynalink"/>
+      <include name="../jdk-15!/jdk.editpad"/>
+      <include name="../jdk-15!/jdk.hotspot.agent"/>
+      <include name="../jdk-15!/jdk.httpserver"/>
+      <include name="../jdk-15!/jdk.incubator.foreign"/>
+      <include name="../jdk-15!/jdk.incubator.jpackage"/>
+      <include name="../jdk-15!/jdk.internal.ed"/>
+      <include name="../jdk-15!/jdk.internal.jvmstat"/>
+      <include name="../jdk-15!/jdk.internal.le"/>
+      <include name="../jdk-15!/jdk.internal.opt"/>
+      <include name="../jdk-15!/jdk.internal.vm.ci"/>
+      <include name="../jdk-15!/jdk.internal.vm.compiler"/>
+      <include name="../jdk-15!/jdk.internal.vm.compiler.management"/>
+      <include name="../jdk-15!/jdk.jartool"/>
+      <include name="../jdk-15!/jdk.javadoc"/>
+      <include name="../jdk-15!/jdk.jcmd"/>
+      <include name="../jdk-15!/jdk.jconsole"/>
+      <include name="../jdk-15!/jdk.jdeps"/>
+      <include name="../jdk-15!/jdk.jdi"/>
+      <include name="../jdk-15!/jdk.jdwp.agent"/>
+      <include name="../jdk-15!/jdk.jfr"/>
+      <include name="../jdk-15!/jdk.jlink"/>
+      <include name="../jdk-15!/jdk.jshell"/>
+      <include name="../jdk-15!/jdk.jsobject"/>
+      <include name="../jdk-15!/jdk.jstatd"/>
+      <include name="../jdk-15!/jdk.localedata"/>
+      <include name="../jdk-15!/jdk.management"/>
+      <include name="../jdk-15!/jdk.management.agent"/>
+      <include name="../jdk-15!/jdk.management.jfr"/>
+      <include name="../jdk-15!/jdk.naming.dns"/>
+      <include name="../jdk-15!/jdk.naming.rmi"/>
+      <include name="../jdk-15!/jdk.net"/>
+      <include name="../jdk-15!/jdk.nio.mapmode"/>
+      <include name="../jdk-15!/jdk.sctp"/>
+      <include name="../jdk-15!/jdk.security.auth"/>
+      <include name="../jdk-15!/jdk.security.jgss"/>
+      <include name="../jdk-15!/jdk.unsupported"/>
+      <include name="../jdk-15!/jdk.unsupported.desktop"/>
+      <include name="../jdk-15!/jdk.xml.dom"/>
+      <include name="../jdk-15!/jdk.zipfs"/>
+    </fileset>
+  </path>
+  
+  <property name="project.jdk.home" value="${jdk.home.15}"/>
+  <property name="project.jdk.bin" value="${jdk.bin.15}"/>
+  <property name="project.jdk.classpath" value="jdk.classpath.15"/>
+  <!-- Register Custom Compiler Taskdefs -->
+  <property name="javac2.home" value="${idea.home}/lib"/>
+  <path id="javac2.classpath">
+    <fileset dir="${javac2.home}">
+      <include name="jdom.jar"/>
+      <include name="asm-all*.jar"/>
+      <include name="forms-*.jar"/>
+      <include name="forms_rt.jar"/>
+    </fileset>
+    <fileset dir="${idea.home}/plugins/java/lib">
+      <include name="javac2.jar"/>
+    </fileset>
+  </path>
+  <target name="register.custom.compilers">
+    <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="javac2.classpath"/>
+    <taskdef name="instrumentIdeaExtensions" classname="com.intellij.ant.InstrumentIdeaExtensions" classpathref="javac2.classpath"/>
+  </target>
+  
+  <!-- Modules -->
+  
+  
+  <!-- Module ADS2-AC1 -->
+  
+  <dirname property="module.ads2-ac1.basedir" file="${ant.file}"/>
+  
+  
+  <property name="module.jdk.home.ads2-ac1" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.ads2-ac1" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.ads2-ac1" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.ads2-ac1" value="-encoding UTF-8 -source 15 -target 15 ${compiler.args}"/>
+  
+  <property name="ads2-ac1.output.dir" value="${module.ads2-ac1.basedir}/out/production/ADS2-AC1"/>
+  <property name="ads2-ac1.testoutput.dir" value="${module.ads2-ac1.basedir}/out/test/ADS2-AC1"/>
+  
+  <path id="ads2-ac1.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="ads2-ac1.module.production.classpath">
+    <path refid="${module.jdk.classpath.ads2-ac1}"/>
+  </path>
+  
+  <path id="ads2-ac1.runtime.production.module.classpath">
+    <pathelement location="${ads2-ac1.output.dir}"/>
+  </path>
+  
+  <path id="ads2-ac1.module.classpath">
+    <path refid="${module.jdk.classpath.ads2-ac1}"/>
+    <pathelement location="${ads2-ac1.output.dir}"/>
+  </path>
+  
+  <path id="ads2-ac1.runtime.module.classpath">
+    <pathelement location="${ads2-ac1.testoutput.dir}"/>
+    <pathelement location="${ads2-ac1.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.ads2-ac1">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.ads2-ac1">
+    <patternset refid="excluded.from.module.ads2-ac1"/>
+  </patternset>
+  
+  <path id="ads2-ac1.module.sourcepath">
+    <dirset dir="${module.ads2-ac1.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.ads2-ac1" depends="compile.module.ads2-ac1.production,compile.module.ads2-ac1.tests" description="Compile module ADS2-AC1"/>
+  
+  <target name="compile.module.ads2-ac1.production" depends="register.custom.compilers" description="Compile module ADS2-AC1; production classes">
+    <mkdir dir="${ads2-ac1.output.dir}"/>
+    <javac2 destdir="${ads2-ac1.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.ads2-ac1}/javac">
+      <compilerarg line="${compiler.args.ads2-ac1}"/>
+      <bootclasspath refid="ads2-ac1.module.bootclasspath"/>
+      <classpath refid="ads2-ac1.module.production.classpath"/>
+      <src refid="ads2-ac1.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.ads2-ac1"/>
+    </javac2>
+    
+    <copy todir="${ads2-ac1.output.dir}">
+      <fileset dir="${module.ads2-ac1.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.ads2-ac1.tests" depends="register.custom.compilers,compile.module.ads2-ac1.production" description="compile module ADS2-AC1; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.ads2-ac1" description="cleanup module">
+    <delete dir="${ads2-ac1.output.dir}"/>
+    <delete dir="${ads2-ac1.testoutput.dir}"/>
+  </target>
+  
+  <target name="init" description="Build initialization">
+    <!-- Perform any build initialization in this target -->
+  </target>
+  
+  <target name="clean" depends="clean.module.ads2-ac1" description="cleanup all"/>
+  
+  <target name="build.modules" depends="init, clean, compile.module.ads2-ac1" description="build all modules"/>
+  
+  <target name="init.artifacts">
+    <property name="artifacts.temp.dir" value="${basedir}/__artifacts_temp"/>
+    <property name="artifact.output.ads2-ac1:jar" value="${basedir}/out/artifacts/ADS2_AC1_jar"/>
+    <mkdir dir="${artifacts.temp.dir}"/>
+    <property name="temp.jar.path.ADS2-AC1.jar" value="${artifacts.temp.dir}/ADS2-AC1.jar"/>
+  </target>
+  
+  <target name="artifact.ads2-ac1:jar" depends="init.artifacts, compile.module.ads2-ac1" description="Build &#39;ADS2-AC1:jar&#39; artifact">
+    <property name="artifact.temp.output.ads2-ac1:jar" value="${artifacts.temp.dir}/ADS2_AC1_jar"/>
+    <mkdir dir="${artifact.temp.output.ads2-ac1:jar}"/>
+    <jar destfile="${temp.jar.path.ADS2-AC1.jar}" duplicate="preserve" filesetmanifest="mergewithoutmain">
+      <zipfileset dir="${ads2-ac1.output.dir}"/>
+    </jar>
+    <copy file="${temp.jar.path.ADS2-AC1.jar}" tofile="${artifact.temp.output.ads2-ac1:jar}/ADS2-AC1.jar"/>
+  </target>
+  
+  <target name="build.all.artifacts" depends="artifact.ads2-ac1:jar" description="Build all artifacts">
+    <mkdir dir="${artifact.output.ads2-ac1:jar}"/>
+    <copy todir="${artifact.output.ads2-ac1:jar}">
+      <fileset dir="${artifact.temp.output.ads2-ac1:jar}"/>
+    </copy>
+    
+    <!-- Delete temporary files -->
+    <delete dir="${artifacts.temp.dir}"/>
+  </target>
+  
+  <target name="all" depends="build.modules, build.all.artifacts" description="build all"/>
+</project>
